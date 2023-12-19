@@ -3,15 +3,27 @@ import './App.css';
 
 
  import ExpenseItem from './components/ExpenseItem';
+
+
 function App() {
-  return (
-    <div className="App">
-       <ExpenseItem></ExpenseItem>
-       <ExpenseItem></ExpenseItem>
-       <ExpenseItem></ExpenseItem>
-       <ExpenseItem></ExpenseItem>
-    </div>
-  );
+
+      let components = [];
+
+      for(let i=0;i<100;i++){
+        components.push(  <ExpenseItem title="cake" date='24/10/2023' amount='2400' location="Market"></ExpenseItem>);
+      }
+  
+    return (
+      <div className="App">
+       
+         {components}
+        
+        
+       
+      </div>
+    );
+ 
+ 
 }
 
 export default App;

@@ -1,17 +1,18 @@
 
-function ExpenseItem(){
+function ExpenseItem(props){
 
     return (
      
         <div className="Expense-item">
                        
-                       <h3>Bike</h3>
+                       <h3>{props.title}</h3>
 
                        <div className="item">
-                       <div>Date</div>
+                       <div>{props.date}</div>
                       
                          
-                     <div>Amount</div>
+                       <div>{props.amount}</div>
+                       <div>{props.location}</div>
                      </div>
         </div>
     );
