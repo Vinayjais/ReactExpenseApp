@@ -1,21 +1,15 @@
 .App {
  justify-content: center;
-  background-color:rgb(140, 238, 255);
+  background-color:rgb(12, 93, 107);
+  max-width: 50%;
+  min-height: 500px;
+  align-items: center;
+  margin-left: 350px;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 2px black solid;
+  padding: 15px;
+  
+
   
 }
-.Expense-item{
-  display: flex;
-  padding: 15px;
-
-}
-.item{
-   display: flex;
-   padding: 15px;
-   gap: 10px;
-  justify-content: space-between;
-}
-
-
-
-
-
