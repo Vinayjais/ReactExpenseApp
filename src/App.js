@@ -1,26 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import ExpenseForm from './components/ExpenseForm';
- import ExpenseItem from './components/ExpenseItem';
-
+import Expenses from './components/Expnses';
 
 function App() {
+    
+       
 
- 
+      function onSaveExpense(ExpenseData){
+          
+          const newExpense ={
+            ...ExpenseData,
+            id: Math.random().toString(),
+          };
+          
+          console.log(newExpense);
+
+      };
 
     
   
     return (
       <div className="App">
             
-            <ExpenseForm></ExpenseForm>   
-
-         <div className='Expenses'>
-          <ExpenseItem title="cake" date='24/10/2023' amount='2400' location="Market"></ExpenseItem>
-          <ExpenseItem title="cake" date='24/10/2023' amount='2400' location="Market"></ExpenseItem>
-          <ExpenseItem title="cake" date='24/10/2023' amount='2400' location="Market"></ExpenseItem>
-          </div>
+            <ExpenseForm onAddNewExpense={onSaveExpense}></ExpenseForm>   
+            <Expenses></Expenses>
+        
         
        
       </div>
