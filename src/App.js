@@ -6,18 +6,25 @@ import React,{useState} from 'react';
 import ExpenseForm from './components/ExpenseForm';
 import Expenses from './components/Expnses';
 
+const listOfExpenses = [
+ 
+];
+
 function App() {
+
+        const [ newExpense, setExpenses] = useState(listOfExpenses);
     
        const [filteredYear, setFilteredYear] = useState('2023');
 
       function onSaveExpense(ExpenseData){
+
+          console.log(ExpenseData);
           
-          const newExpense ={
-            ...ExpenseData,
-            id: Math.random().toString(),
-          };
+           setExpenses((prevExpense)=>{
           
-          console.log(newExpense);
+             return [ExpenseData,...prevExpense];
+           
+      });
 
       };
    
@@ -33,7 +40,7 @@ function App() {
             
             <ExpenseForm onAddNewExpense={onSaveExpense}></ExpenseForm>  
             <ExpenseFilter selected={filteredYear} onchangeFilter={filterHandler}></ExpenseFilter> 
-            <Expenses></Expenses>
+            <Expenses items={newExpense}></Expenses>
         
         
        
