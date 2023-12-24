@@ -55,8 +55,8 @@ function ExpenseForm(props){
         
     return (
             <form  onSubmit={dataHandler}>
-        <div className="Expense-form">
-               <div className="form">
+        <div className="Expense-form card">
+               <div>
                     
                     <input type="text" placeholder="Title" value={enteredTitle} required onChange={titleHandler}></input>
                     <input type="number" placeholder="Amount" value={enteredAmount} required onChange={amountHandler}></input>

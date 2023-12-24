@@ -6,7 +6,7 @@ import ExpenseForm from './components/ExpenseForm';
 import Expenses from './components/Expnses';
 
 const listOfExpenses = [
-   {
+  {
     title:'cake',
     amount:'250',
     date:new Date(2023,5,12)
@@ -28,7 +28,7 @@ const listOfExpenses = [
     amount:'250',
     date:new Date(2025,6,12)
 
-   }
+   } 
 ];
 
 function App() {
