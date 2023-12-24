@@ -4,6 +4,7 @@ import React,{useState} from 'react';
 
 import ExpenseForm from './components/ExpenseForm';
 import Expenses from './components/Expnses';
+import FormButton from './components/FormButton';
 
 const listOfExpenses = [
   {
@@ -31,14 +32,17 @@ const listOfExpenses = [
    } 
 ];
 
+
 function App() {
+        
+let formConaten =  <ExpenseForm cancelAdd={cancelAdding} onAddNewExpense={onSaveExpense}></ExpenseForm>;
+let prevForm=  <FormButton onClick={buttonClicked}></FormButton>;
 
+        const [ FormContentInput, setFormContent] = useState(prevForm);
         const [ newExpense, setExpenses] = useState(listOfExpenses);
-    
+       function onSaveExpense(ExpenseData){
 
-      function onSaveExpense(ExpenseData){
-
-          console.log(ExpenseData);
+         // console.log(ExpenseData);
           
            setExpenses((prevExpense)=>{
           
@@ -48,13 +52,19 @@ function App() {
 
       };
    
+      function buttonClicked(){
+          setFormContent(formConaten);
 
+      }
+      function cancelAdding(){
+        setFormContent(prevForm)
+      }
     
   
     return (
       <div className="App">
             
-            <ExpenseForm onAddNewExpense={onSaveExpense}></ExpenseForm>  
+            {FormContentInput}
             <Expenses items={newExpense}></Expenses>
         
         

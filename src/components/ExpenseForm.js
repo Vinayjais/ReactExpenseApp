@@ -63,7 +63,11 @@ function ExpenseForm(props){
                     <input type="date" placeholder="Date" value={enteredDate} required onChange={dateHandler}></input>
 
                     <div>
-                        <button>Add</button>
+                        <button>Add</button> 
+                    </div>
+                    <div>
+                    <button onClick={props.cancelAdd}> Cancel</button>
+
                     </div>
                </div>
 
