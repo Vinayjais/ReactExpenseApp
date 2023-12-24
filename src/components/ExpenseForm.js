@@ -40,9 +40,10 @@ function ExpenseForm(props){
         event.preventDefault();
 
         const inputData ={
+              id: Math.random(),
              title: enteredTitle,
              amount: enteredAmount,
-             date : enteredDate
+             date :  new Date(enteredDate),
 
         };
 
@@ -57,9 +58,9 @@ function ExpenseForm(props){
         <div className="Expense-form">
                <div className="form">
                     
-                    <input type="text" placeholder="Title" value={enteredTitle} onChange={titleHandler}></input>
-                    <input type="number" placeholder="Amount" value={enteredAmount} onChange={amountHandler}></input>
-                    <input type="date" placeholder="Date" value={enteredDate} onChange={dateHandler}></input>
+                    <input type="text" placeholder="Title" value={enteredTitle} required onChange={titleHandler}></input>
+                    <input type="number" placeholder="Amount" value={enteredAmount} required onChange={amountHandler}></input>
+                    <input type="date" placeholder="Date" value={enteredDate} required onChange={dateHandler}></input>
 
                     <div>
                         <button>Add</button>

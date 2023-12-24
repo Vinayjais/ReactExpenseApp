@@ -1,17 +1,17 @@
- import React, {useState} from 'react';
+ import React from 'react';
 import './Expense.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
  
 function ExpenseItem(props){
      
-          const [amount, setAmount] = useState(props.amount);
-          const [title, setTitle] = useState(props.title);
+        //   const [amount, setAmount] = useState(props.amount);
+        //   const [title, setTitle] = useState(props.title);
 
-                 const clickHandler =()=>{
-                    setAmount('100');
-                    setTitle('Updated');
-                 };
+                //  const clickHandler =()=>{
+                //     setAmount('100');
+                //     setTitle('Updated');
+                //  };
 
     return (
      
@@ -19,8 +19,8 @@ function ExpenseItem(props){
                        
                        
                        <ExpenseDate date={props.date}></ExpenseDate>
-                       <ExpenseDetails title={title} amount={amount} location={props.location}></ExpenseDetails>
-                       <button onClick={clickHandler}>  Change</button>
+                       <ExpenseDetails key={props.id} title={props.title} amount={props.amount} location={props.location}></ExpenseDetails>
+                      
                      
         </div>
     );

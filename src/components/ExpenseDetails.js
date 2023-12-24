@@ -8,7 +8,7 @@ function ExpenseDetails(props){
                    
         <h3>{props.title}</h3>
           
-        <div>{props.amount}</div>
+        <div className="card">{props.amount}</div>
         <div>{props.location}</div>
       </div>
 

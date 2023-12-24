@@ -5,7 +5,7 @@ function ExpenseDate(props){
 
             <div>
 
-<div>{props.date}</div>
+             <div>{props.date}</div>
             </div>
     );
 }
