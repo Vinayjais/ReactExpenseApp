@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import ExpenseItem from './ExpenseItem'
 import ExpenseFilter from './ExpenseFilter';
+import ExpensesChart from './ExpensesChart';
   
 function Expenses (props){
        const [filteredYear, setFilteredYear] = useState('2023');
@@ -19,7 +20,7 @@ function Expenses (props){
     return( 
           <div>       
             <ExpenseFilter selected={filteredYear} onchangeFilter={filterHandler}></ExpenseFilter> 
-            
+            <ExpensesChart expenses={filteredExpense}></ExpensesChart>
              <div className='Expenses'>
                { filteredExpense.length === 0 && <p className='card'>Expenses Not found.</p> }
                { filteredExpense.length === 1 && <p className='card'>Add more Expenses.</p> }
